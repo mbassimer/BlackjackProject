@@ -2,7 +2,7 @@ package com.skilldistillery.cards.common;
 
 
 
- class Card {
+public class Card {
 private	Suit  suit;
 private	Rank rank;
 	
