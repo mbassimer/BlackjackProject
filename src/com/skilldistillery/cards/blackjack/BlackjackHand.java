@@ -6,23 +6,14 @@ import com.skilldistillery.cards.common.AbstractHand;
 import com.skilldistillery.cards.common.Card;
 
 public class BlackjackHand extends AbstractHand {
-	
 
 	public boolean isBlackjack() {
-		if (getHandValue() == 21) {
-			return true;
-		}
-		return false;
+		return true;
 
 	}
 
-	public boolean isBust() {
-		if (getHandValue() > 21) {
-
-			return true;
-		}
-		return false;
-	}
+	
+	
 
 	public void addCard(Card additional) {
 

@@ -7,7 +7,7 @@ public class BlacjackApp {
 		
 	GameDriver game = new GameDriver();
 	
-	game.Launch();	
+	game.launch();	
 	
 	}
 

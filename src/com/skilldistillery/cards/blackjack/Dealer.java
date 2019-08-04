@@ -2,7 +2,6 @@ package com.skilldistillery.cards.blackjack;
 
 import com.skilldistillery.cards.common.Card;
 import com.skilldistillery.cards.common.Deck;
-
 public class Dealer extends AbstractBlackjackPlayer {
 
 	private Deck cards = new Deck();
@@ -15,6 +14,12 @@ public class Dealer extends AbstractBlackjackPlayer {
 	public BlackjackHand hand() {
 		return super.getHand();
 
+	}
+	
+	public int checkDeckSize() {
+		System.out.println("The table has  "+ cards.checkDeckSize() + " cards") ;
+		return 0;
+		
 	}
 
 	public void shuffle() {
@@ -30,10 +35,5 @@ public class Dealer extends AbstractBlackjackPlayer {
 	}
 
 
-	@Override
-	public String winner() {
-
-		return super.winner();
-	}
 
 }
