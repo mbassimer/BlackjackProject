@@ -1,0 +1,29 @@
+### BlackJack Project
+
+Week 4 Homework for Skill Distillery Java Developer bootcamp
+
+### Overview
+
+This project is to simulate a Blackjack game, while utilizing OO design. The player and dealer were types of abstract player that could choose to deal or to hit on the current hand.
+The intention for utilizing it as an object oriented design is for the fact that it would be easy for another program to be designed in to facilitate another type of card game
+being transposed into this program. 
+
+ ### Technologies Used
+ 
+-Java -Eclipse -Atom
+-Git -UML
+
+
+### Lessons Learned
+
+Lessons learned during this project was the importance of understanding each object and how it relates to the program. The object oriented design is becoming more clear in how it truly
+enables developers to take an abstract idea and utilize code behind it to make it more concrete. 
+ 
+ ### UML Diagrams
+ 
+ The UML diagrapm for this project was only partial of what we had to develop. It was a small section of how the entire project was supposed to unfold. 
+ This was nice for the developing of this project because it allowed the designer to have some sort of autonomy with implementing coding concepts. 
+ 
+ ### Stretch Goals
+ This program didn't incorporate any stretch goals, however; it has given a further understanding of what object oriented is all about and that was the best part of this program.
+ Having a more distinct vision on objects, will allow for a more complete realization of future stretch goals. 

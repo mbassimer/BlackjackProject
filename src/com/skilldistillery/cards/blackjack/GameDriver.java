@@ -110,15 +110,14 @@ public class GameDriver {
 			System.out.println("The house has" + dealz.getHand() + "or  " + dealz.getValue());
 		}
 
-		if (dealz.getValue() <= 21) {
+		if (dealz.getValue() < playerz.getValue());{
 			dealz.getHand().addCard(dealz.dealCards());
-			winner();
+		}
 
-		} else if (dealz.getValue() == 21) {
+		if (dealz.getValue() == 21) {
 			System.out.println("Dealer has Black Jack.");
 			winner();
 		} else if (dealz.getValue() > 21) {
-			dealz.getHand().isBust();
 			dealerzBust();
 		}
 
@@ -138,9 +137,9 @@ public class GameDriver {
 			System.out.println("Player wins ");
 		} else if (playerz.getValue() < dealz.getValue()) {
 			System.out.println("House wins");
-		} else if (dealz.getValue() == playerz.getValue()) {
-			System.out.println("This game is a push");
 
+		} else if (playerz.getValue() == dealz.getValue()) {
+			System.out.println("This game is a push");
 		}
 
 	}
