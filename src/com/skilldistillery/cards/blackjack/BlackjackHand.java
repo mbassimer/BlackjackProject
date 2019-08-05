@@ -13,7 +13,10 @@ public class BlackjackHand extends AbstractHand {
 	}
 
 	
-	
+	public boolean isBust() {
+		
+		return true;
+	}
 
 	public void addCard(Card additional) {
 

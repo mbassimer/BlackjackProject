@@ -38,12 +38,23 @@ public class GameDriver {
 		if (playerz.getValue() == 21) {
 			playerz.getHand().isBlackjack();
 			System.out.println("Player wins");
+
+		} else if (dealz.getValue() == 21) {
+			dealz.getHand().isBlackjack();
+			System.out.println("Dealer wins");
+
+		} else if (dealz.getValue() > 21) {
+			dealz.getHand().isBust();
+			dealerzBust();
+			System.out.println("Dealer loses");
+
+		} else if (playerz.getValue() > 21) {
+			playerz.getHand().isBust();
+			System.out.println("Player Loses");
+
 		}
 
-		else if (dealz.getValue() == 21 || playerz.getValue() == 21) {
-			System.out.println("This game is a push");
-
-		} else
+		else
 			playerOption();
 
 	}
@@ -68,13 +79,13 @@ public class GameDriver {
 				if (playerz.getHand().getHandValue() < 21) {
 					playerOption();
 				}
-				if (playerz.getHand().getHandValue() > 21) {
-					playerzBust();
-				}
 
 				else if (playerz.getValue() == 21) {
 					System.out.println("Player's got Blackjack.");
 					dealerPlay();
+				} else if (playerz.getHand().getHandValue() > 21) {
+					playerz.getHand().isBust();
+					playerzBust();
 				}
 
 			}
@@ -88,23 +99,27 @@ public class GameDriver {
 			}
 		} catch (InputMismatchException exception) {
 			System.out.println("This is not the correct type of input");
+			playerOption();
 		}
 
 	}
 
 	public void dealerPlay() {
-		do {
+		while (dealz.getValue() <= 17) {
 			dealz.getHand().addCard(dealz.dealCards());
-			System.out.println("The house has" + dealz.getHand() + "or a collective of " + dealz.getValue());
-		} while (dealz.getValue() < 17);
+			System.out.println("The house has" + dealz.getHand() + "or  " + dealz.getValue());
+		}
 
 		if (dealz.getValue() <= 21) {
 			dealz.getHand().addCard(dealz.dealCards());
-		} else if (dealz.getValue() > 21) {
-			dealerzBust();
-			System.exit(0);
-		}else {
 			winner();
+
+		} else if (dealz.getValue() == 21) {
+			System.out.println("Dealer has Black Jack.");
+			winner();
+		} else if (dealz.getValue() > 21) {
+			dealz.getHand().isBust();
+			dealerzBust();
 		}
 
 	}
@@ -121,10 +136,12 @@ public class GameDriver {
 	public void winner() {
 		if (dealz.getValue() < playerz.getValue()) {
 			System.out.println("Player wins ");
-		}
-		else if (dealz.getValue() > playerz.getValue()){
+		} else if (playerz.getValue() < dealz.getValue()) {
 			System.out.println("House wins");
-		}
-	}
+		} else if (dealz.getValue() == playerz.getValue()) {
+			System.out.println("This game is a push");
 
+		}
+
+	}
 }
